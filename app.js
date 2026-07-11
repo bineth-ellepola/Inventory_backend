@@ -1,5 +1,4 @@
 import express from "express";
-import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
 
@@ -25,12 +24,6 @@ app.use("/api/packingmaterials", packingmaterialRoutes);
 app.get("/", (req, res) => {
   res.send("Inventory API is running 🚀");
 });
-
-// MongoDB
-mongoose
-  .connect(process.env.MONGO_URI)
-  .then(() => console.log("MongoDBB connected"))
-  .catch((err) => console.log(err));
 
 // Server
 const PORT = process.env.PORT || 5001;
